@@ -163,7 +163,7 @@ If you already have this installed, just run `bchd -datadir=/home/<user>/.bch -c
 
 If you already have Bitcoin ABC istalled on MacOS, you can restart using this command:
 ```shell
-./BitcoinABC-Qt -conf=$HOME/Library/Application\ Support/Bch/bch.conf  -datadir=$HOME/Library/Application\ Support/Bch/
+/Applications/BitcoinABC-Qt.app/Contents/MacOS/BitcoinABC-Qt -conf=$HOME/Library/Application\ Support/Bch/bch.conf  -datadir=$HOME/Library/Application\ Support/Bch/
 ```
 
 Basically, just run the daemon with `.bch/bch.conf` for native and then start BarterDEX and test. That means to run Bitcoin Cash with BarterDEX the BCH users `must` change their Bitcoin Cash data directory, setup `bitcoin.conf` as `bch.conf` file.
