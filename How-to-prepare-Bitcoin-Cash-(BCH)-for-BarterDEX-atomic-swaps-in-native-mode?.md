@@ -60,7 +60,70 @@ rpcport=33333
 - Make any changes required to bch.conf file and save it.
 
 
+### Running Bitcoin Cash with new setup changes
+Since the default directory and config file of bitcoin cash has been renamed you have to now use a command to run Bitcoin Cash.
 
+#### Linux
+```shell
+# If you want to run bitcoin cash wallet with prune mode on, which saves a lot of disk space, then use this command.
+# if using daemon
+# assuming you have bitcoin cash daemon with name 'bitcoind'
+bitcoind -datadir=$HOME/.bch -conf=$HOME/.bch/bch.conf -prune=4096 -daemon
+
+# if using QT wallet
+bitcoin-qt -datadir=$HOME/.bch -conf=$HOME/.bch/bch.conf -prune=4096 -daemon
+
+# Or
+
+# if using daemon
+# If you want to run bitcoin cash deamon with full blockchain downloaded then use this command:
+bitcoind -datadir=$HOME/.bch -conf=$HOME/.bch/bch.conf -daemon
+
+# if using QT wallet
+bitcoin-qt -datadir=$HOME/.bch -conf=$HOME/.bch/bch.conf -daemon
+```
+
+#### OSX
+```shell
+# If you want to run bitcoin cash wallet with prune mode on, which saves a lot of disk space, then use this command.
+# if using daemon
+# assuming you have bitcoin cash daemon with name 'bitcoind'
+bitcoind -datadir=$HOME/Library/Application\ Support/Bch -conf=$HOME/Library/Application\ Support/Bch/bch.conf -prune=4096 -daemon
+
+# if using QT wallet
+bitcoin-qt -datadir=$HOME/Library/Application\ Support/Bch -conf=$HOME/Library/Application\ Support/Bch/bch.conf -prune=4096 -daemon
+
+# Or
+
+# if using daemon
+# If you want to run bitcoin cash deamon with full blockchain downloaded then use this command:
+bitcoind -datadir=$HOME/Library/Application\ Support/Bch -conf=$HOME/Library/Application\ Support/Bch/bch.conf -daemon
+
+# if using QT wallet
+bitcoin-qt -datadir=$HOME/Library/Application\ Support/Bch -conf=$HOME/Library/Application\ Support/Bch/bch.conf -daemon
+```
+
+#### Windows
+```shell
+# If you want to run bitcoin cash wallet with prune mode on, which saves a lot of disk space, then use this command.
+# if using daemon
+# assuming you have bitcoin cash daemon with name 'bitcoind'
+bitcoind -datadir=%AppData%\Bch -conf=%AppData%\Bch\bch.conf -prune=4096 -daemon
+
+# if using QT wallet
+Bitcoin-QT -datadir=%AppData%\Bch -conf=%AppData%\Bch\bch.conf -prune=4096 -daemon
+
+# Or
+
+# if using daemon
+# If you want to run bitcoin cash deamon with full blockchain downloaded then use this command:
+bitcoind -datadir=%AppData%\Bch -conf=%AppData%\Bch\bch.conf -daemon
+
+# if using QT wallet
+Bitcoin-QT -datadir=%AppData%\Bch -conf=%AppData%\Bch\bch.conf -daemon
+```
+
+### If you want to install and run Bitcoin Cash from source
 
 You need Bitcoin Cash (BCH) blockchain synced and the wallet daemon running.
 
