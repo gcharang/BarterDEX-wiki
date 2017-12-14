@@ -15,17 +15,18 @@ mkdir ~/.bch
 echo "server=1" >> ~/.bch/bch.conf
 echo "listen=0" >> ~/.bch/bch.conf
 echo "listenonion=0" >> ~/.bch/bch.conf
+echo "rpcport=33333" >> ~/.bch/bch.conf
 echo "rpcuser=barterbch" >> ~/.bch/bch.conf
 echo "rpcpassword=`head -c 32 /dev/urandom | base64`" >> ~/.bch/bch.conf
 chmod 0600 ~/.bch/bch.conf
-bchd -daemon -datadir=~/.bch -conf=bch.conf -rpcport=33333
+bchd -daemon -datadir=~/.bch -conf=bch.conf
 ```
 
-If you already have this installed, just run `bchd -datadir=/home/<user>/.bch -conf=bch.conf -rpcport=33333 -prune=4096 -daemon`
+If you already have this installed, just run `bchd -datadir=/home/<user>/.bch -conf=bch.conf -prune=4096 -daemon`
 
 If you already have Bitcoin ABC istalled on MacOS, you can restart using this command:
 ```shell
-./BitcoinABC-Qt -conf=/Users/satinder/Library/Application\ Support/Bch/bch.conf  -datadir=/Users/satinder/Library/Application\ Support/Bch/
+./BitcoinABC-Qt -conf=$HOME/Library/Application\ Support/Bch/bch.conf  -datadir=$HOME/Library/Application\ Support/Bch/
 ```
 
 Basically, just run the daemon with `.bch/bch.conf` for native and then start BarterDEX and test. That means to run Bitcoin Cash with BarterDEX the BCH users `must` change their Bitcoin Cash data directory, setup `bitcoin.conf` as `bch.conf` file.
@@ -43,7 +44,7 @@ rpcport=33333
 
 BaterDEX GUI will automatically show you BitcoinCash (BCH)
 
-Use RPC commands like this `bch-cli -datadir=/home/<user>/.bch -conf=bch.conf -rpcport=33333 getinfo` to query data.
+Use RPC commands like this `bch-cli -datadir=/home/<user>/.bch -conf=bch.conf getinfo` to query data.
 
 Optional: This entry goes to `coins.json` file (add this if this is not there).
 `{\"coin\":\"BCH\",\"name\":\"bch\",\"active\":1,\"rpcport\":33333,\"pubtype\":0,\"p2shtype\":5,\"wiftype\":128,\"txfee\":1000}`
