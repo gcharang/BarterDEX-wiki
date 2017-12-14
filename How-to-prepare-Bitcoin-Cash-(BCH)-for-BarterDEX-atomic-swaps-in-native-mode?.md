@@ -1,3 +1,67 @@
+### Fixing Bitcoin Cash and Bitcoin-Core conflicting setup
+
+As many users will be running Bitcoin-Core and Bitcoin Cash Wallets on the same machine, installing and running Bitcoin Cash on existing Bitcoin-Core running system may or may not conflict with existing Bitcoin-Core wallet setup. Just to make sure there is no chance of such case you can rename the Bitcoin Cash directory and file names.
+
+If you have already Bitcoin Cash wallet running on your machine, please do these changes:
+
+#### Linux
+```shell
+# assuming ~/.bitcoin is being used by bitcoin cash
+mv ~/.bitcoin/ ~/.bch/
+
+# assuming ~/.bitcoin/bitcoin.conf file is setup/configured and is used for bitcoin cash
+mv ~/.bch/bitcoin.conf ~/.bch/bch.conf
+
+# If you don't have ~/.bch/bch.conf file then create one as follows:
+echo "server=1" >> ~/.bch/bch.conf
+echo "listen=0" >> ~/.bch/bch.conf
+echo "listenonion=0" >> ~/.bch/bch.conf
+echo "rpcport=33333" >> ~/.bch/bch.conf
+echo "rpcuser=barterbch" >> ~/.bch/bch.conf
+echo "rpcpassword=`head -c 32 /dev/urandom | base64`" >> ~/.bch/bch.conf
+chmod 0600 ~/.bch/bch.conf
+```
+
+#### OSX
+```shell
+# assuming $HOME/Library/Application\ Support/Bitcoin is being used by bitcoin cash
+mv $HOME/Library/Application\ Support/Bitcoin $HOME/Library/Application\ Support/Bch
+
+# assuming $HOME/Library/Application\ Support/Bitcoin/bitcoin.conf file is setup/configured and is used for bitcoin cash
+mv $HOME/Library/Application\ Support/Bch/bitcoin.conf $HOME/Library/Application\ Support/Bch/bch.conf
+
+# If you don't have $HOME/Library/Application\ Support/Bch/bch.conf file then create one as follows:
+echo "server=1" >> $HOME/Library/Application\ Support/Bch/bch.conf
+echo "listen=0" >> $HOME/Library/Application\ Support/Bch/bch.conf
+echo "listenonion=0" >> $HOME/Library/Application\ Support/Bch/bch.conf
+echo "rpcport=33333" >> $HOME/Library/Application\ Support/Bch/bch.conf
+echo "rpcuser=barterbch" >> $HOME/Library/Application\ Support/Bch/bch.conf
+echo "rpcpassword=`head -c 32 /dev/urandom | base64`" >> $HOME/Library/Application\ Support/Bch/bch.conf
+chmod 0600 $HOME/Library/Application\ Support/Bch/bch.conf
+```
+
+#### Windows
+- Open Windows Explorer
+- Type in its address bar `%AppData%`, and press Enter key to open your logged in user's Application Data folder.
+- Assuming you have Bitcoin Cash installed and it was using the directory named `Bitcoin` at this location, rename it to `Bch`.
+- Open `Bch` directory and rename `bitcoin.conf` file to `bch.conf` file.
+- Open `bch.conf` file in a notepad or any text editor of your choice and make sure it matches the following config settings:
+
+```shell
+rpcuser=examplerpcuser
+rpcpassword=examplerpcpassword
+prune=4096
+server=1
+rpcbind=127.0.0.1
+bind=127.0.0.1
+rpcport=33333
+```
+
+- Make any changes required to bch.conf file and save it.
+
+
+
+
 You need Bitcoin Cash (BCH) blockchain synced and the wallet daemon running.
 
 Compile and run BitcoinABC wallet from source:
