@@ -2,9 +2,11 @@
 
 Download and install the latest GUI wallet for your OS from your choice of website.
 https://www.bitcoincash.org/#wallets
+
 https://www.bitcoinabc.org/
 
 https://download.bitcoinabc.org/
+
 https://download.bitcoinabc.org/0.16.1/ (latest)
 
 As many users will be running Bitcoin-Core and Bitcoin Cash Wallets on the same machine, installing and running Bitcoin Cash on existing Bitcoin-Core running system may or may not conflict with existing Bitcoin-Core wallet setup. Just to make sure there is no chance of such case you can rename the Bitcoin Cash directory and file names.
