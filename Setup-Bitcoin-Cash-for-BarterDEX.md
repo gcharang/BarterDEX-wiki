@@ -27,6 +27,7 @@ echo "server=1" >> ~/.bch/bch.conf
 echo "listen=0" >> ~/.bch/bch.conf
 echo "listenonion=0" >> ~/.bch/bch.conf
 echo "rpcport=33333" >> ~/.bch/bch.conf
+echo "port=83333" >> ~/.bch/bch.conf
 echo "rpcuser=barterbch" >> ~/.bch/bch.conf
 echo "rpcpassword=`head -c 32 /dev/urandom | base64`" >> ~/.bch/bch.conf
 chmod 0600 ~/.bch/bch.conf
@@ -45,6 +46,7 @@ echo "server=1" >> $HOME/Library/Application\ Support/Bch/bch.conf
 echo "listen=0" >> $HOME/Library/Application\ Support/Bch/bch.conf
 echo "listenonion=0" >> $HOME/Library/Application\ Support/Bch/bch.conf
 echo "rpcport=33333" >> $HOME/Library/Application\ Support/Bch/bch.conf
+echo "port=83333" >> $HOME/Library/Application\ Support/Bch/bch.conf
 echo "rpcuser=barterbch" >> $HOME/Library/Application\ Support/Bch/bch.conf
 echo "rpcpassword=`head -c 32 /dev/urandom | base64`" >> $HOME/Library/Application\ Support/Bch/bch.conf
 chmod 0600 $HOME/Library/Application\ Support/Bch/bch.conf
@@ -65,6 +67,7 @@ server=1
 rpcbind=127.0.0.1
 bind=127.0.0.1
 rpcport=33333
+port=83333
 ```
 
 - Make any changes required to bch.conf file and save it.
@@ -153,6 +156,7 @@ echo "server=1" >> ~/.bch/bch.conf
 echo "listen=0" >> ~/.bch/bch.conf
 echo "listenonion=0" >> ~/.bch/bch.conf
 echo "rpcport=33333" >> ~/.bch/bch.conf
+echo "port=83333" >> ~/.bch/bch.conf
 echo "rpcuser=barterbch" >> ~/.bch/bch.conf
 echo "rpcpassword=`head -c 32 /dev/urandom | base64`" >> ~/.bch/bch.conf
 chmod 0600 ~/.bch/bch.conf
@@ -177,6 +181,7 @@ server=1
 rpcbind=127.0.0.1
 bind=127.0.0.1
 rpcport=33333
+port=83333
 ```
 
 BaterDEX GUI will automatically show you BitcoinCash (BCH)
