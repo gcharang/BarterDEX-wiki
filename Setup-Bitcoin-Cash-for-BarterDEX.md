@@ -4,7 +4,7 @@ https://www.bitcoincash.org/#wallets
 
 https://www.bitcoinabc.org/
 
-https://download.bitcoinabc.org/
+https://download.bitcoinabc.org/ (find the latest version from here)
 
 https://download.bitcoinabc.org/0.16.1/ (latest)
 
