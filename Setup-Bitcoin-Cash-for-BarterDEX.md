@@ -190,3 +190,35 @@ Use RPC commands like this `bch-cli -datadir=/home/<user>/.bch -conf=bch.conf ge
 
 Optional: This entry goes to `coins.json` file (add this if this is not there).
 `{\"coin\":\"BCH\",\"name\":\"bch\",\"active\":1,\"rpcport\":33333,\"pubtype\":0,\"p2shtype\":5,\"wiftype\":128,\"txfee\":1000}`
+
+
+### Tips and Tricks
+With the above setup it becomes bit inconvinient to run BitcoinABC app. As it always looks for `bitcoin` data directory on it's platform and to make it run with our own custom renamed `Bch` direcotry we have to always issue a command to run with the desired path.
+
+But these few tips and tricks may help someone.
+
+#### OSX
+Follow these commands to make setup your `BitcoinABC.app` to use `Bch` data directory on startup.
+
+```shell
+cd /Applications/BitcoinABC-Qt.app/Contents/MacOS
+
+# Rename existing BitcoinABC-Qt file to something else, like BitcoinABCQt
+mv BitcoinABC-Qt BitcoinABCQt
+
+# Now create a new shells script and paste this line into it
+nano BitcoinABC-Qt
+
+# Paste this line in this script:
+/Applications/BitcoinABC-Qt.app/Contents/MacOS/BitcoinABCQt -conf=$HOME/Library/Application\ Support/Bch/bch.conf  -datadir=$HOME/Library/Application\ Support/Bch/
+
+# Press CTRL+O to write this change to file
+# Press CTRL+X to exit the text editor and get back to command prompt
+
+# Now change this shell script's permissions to executable
+chmod +x BitcoinABC-Qt
+```
+
+With the above change, the `BitcoinABC-QT.app` will always start with directory and configuration file of `Bch`.
+
+And in case you are doing upgrade of `BitcoinABC-QT.app` or anything similar for Bitcoin Cash wallet for QT wallet, you can probably apply the same method to set them up for `Bch` directory by default.
